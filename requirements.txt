@@ -1,5 +1,5 @@
 streamlit
 numpy
 pandas
-chatmof
+chatmof==0.1.2
 langchain
