@@ -17,3 +17,5 @@ _book
 
 *.log
 __pycache__/
+
+*.ipynb
