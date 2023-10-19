@@ -1,0 +1,2 @@
+class ChatMOFOnlineError(BaseException):
+    pass
