@@ -12,13 +12,23 @@ ChatMOF.from_llm = from_llm_revised  # revise functions in ChatMOF
 
 verbose = True
 search_internet = False
+default_open_ai = None
 
-openai_api_key = st.text_input('Enter OpenAI api key below 👇')
+with st.sidebar:
+    st.header('OpenAI ChatModel')
+    selected_model = st.selectbox(
+        label="Choose your llm model",
+        options=("gpt-4", "gpt-3.5-turbo", "gpt-3.5-turbo-16k")
+    )
+    selected_temp = st.slider('Temperature', 0.0, 1.0, 0.1)
+
+
+openai_api_key = st.text_input('Enter OpenAI api key below 👇', value=default_open_ai)
 
 if openai_api_key:
     llm = ChatOpenAI(
-        temperature=0.1, 
-        model_name='gpt-4', 
+        temperature=selected_temp,
+        model_name=selected_model,
         openai_api_key=openai_api_key
     )
     callback_manager = [StdOutCallbackHandler()]
@@ -37,15 +47,13 @@ st.title('Welcome to the ChatMOF 🤖')
 
 description = """- **ChatMOF** is an autonomous Artificial Intelligence (AI) system that is built to predict and generate of metal-organic frameworks (MOFs).
 - By leveraging a large-scale language model (**gpt-4**), ChatMOF extracts key details from textual inputs and delivers appropriate responses, thus eliminating the necessity for rigid structured queries.
-- In online demo, **only the `Search task` is available**.  For `prediction tasks` and `generation tasks` that require machine learning, it does not work properly except for the example. If you want to test the feature, please test it on our [github](https://github.com/Yeonghun1675/ChatMOF).
-- Material name uses **CoREMOF's REFCODE** (e.g. JUKPAI, XEGKUR, PITPEP)
+- In online demo, **only the `Search task` is available**.  For `prediction tasks` and `generation tasks` that require machine learning, it does not work properly except for the example. If you want to test your own example, please use code on our [github](https://github.com/Yeonghun1675/ChatMOF).
+- You have to enter the material name into **CoREMOF's REFCODE** (e.g. JUKPAI, XEGKUR, PITPEP)
 
 ## Start!
 """
 
 st.write(description)
-
-current_index = st.session_state.get('current_index', 0)
 
 col1, col2 = st.columns((8, 1))
 
@@ -64,6 +72,21 @@ else:
     input_question = selected_question_index
 
 
+# import py3Dmol
+# import ase
+
+# def show_3Dmol(structure):
+#     block = structure.write(fmt="block")  # Assuming structure is an ASE Atoms object
+
+#     viewer = py3Dmol.view(width=800, height=400)
+#     viewer.addModel(block, format="sdf")
+#     viewer.setStyle({"stick": {}})
+#     viewer.setBackgroundColor("white")
+#     viewer.zoomTo()
+    
+#     return viewer.show()
+
+
 if start_button:
     if not openai_api_key:
         st.warning('You have to enter your OpenAI api key!')
@@ -75,6 +98,8 @@ if start_button:
                 text = chatmof.run(input_question)
             st.subheader('Final Answer')
             st.text_area('', value=text, height=100, max_chars=None, key=None)
+            # atoms = ase.io.read('cifs/XEGKUR.cif')
+            # st.markdown(show_3Dmol(atoms), unsafe_allow_html=True)
 
         except AuthenticationError:
             st.warning('Incorrect API key provied. You can find your API key at https://platform.openai.com/account/api-keys')

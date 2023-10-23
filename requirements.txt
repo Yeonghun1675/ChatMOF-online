@@ -3,3 +3,4 @@ numpy
 pandas
 chatmof==0.1.4
 langchain
+py3Dmol

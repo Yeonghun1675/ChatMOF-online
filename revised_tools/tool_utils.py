@@ -8,7 +8,7 @@ from langchain.agents import load_tools, get_all_tool_names
 from revised_tools.predictor import _get_predict_properties
 from chatmof.tools.search_csv import _get_search_csv
 from chatmof.tools.genetic_algorithm import _get_generator
-from chatmof.tools.visualizer import _get_visualizer
+from revised_tools.visualizer import _get_visualizer
 #from chatmof.tools.python_repl import _get_python_repl
 from revised_tools.python_repl import _get_python_repl
 

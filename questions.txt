@@ -3,7 +3,6 @@ At 298K, what's the CO2 Henry coefficient for XEGKUR?
 How much O2 can XEGKUR take up at 1bar and 298K?
 What's the density and accessible volume of ROLCEC19? 
 What type of metal is present in PITPEP?
-What is the density of materials with an accessible surface area above a 3000 m2/g?
 Can you list the top 10 materials with the highest accessible volume fraction?
 How does the largest free pore diameter of LITDAV compare with other materials?
 Can TAHYUZ have an open metal site?
