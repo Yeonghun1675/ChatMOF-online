@@ -12,7 +12,7 @@ ChatMOF.from_llm = from_llm_revised  # revise functions in ChatMOF
 
 verbose = True
 search_internet = False
-default_open_ai = None
+default_open_ai = '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'
 
 with st.sidebar:
     st.header('OpenAI ChatModel')
@@ -47,8 +47,8 @@ st.title('Welcome to the ChatMOF 🤖')
 
 description = """- **ChatMOF** is an autonomous Artificial Intelligence (AI) system that is built to predict and generate of metal-organic frameworks (MOFs).
 - By leveraging a large-scale language model (**gpt-4**), ChatMOF extracts key details from textual inputs and delivers appropriate responses, thus eliminating the necessity for rigid structured queries.
-- In online demo, **only the `Search task` is available**.  For `prediction tasks` and `generation tasks` that require machine learning, it does not work properly except for the example. If you want to test your own example, please use code on our [github](https://github.com/Yeonghun1675/ChatMOF).
-- You have to enter the material name into **CoREMOF's REFCODE** (e.g. JUKPAI, XEGKUR, PITPEP)
+- In online demo, **only the `Search task` is available**.  For `prediction tasks` and `generation tasks` that require machine learning do not work properly, except for the provided examples. If you want to test your own example, please use the code available on our [github](https://github.com/Yeonghun1675/ChatMOF).
+- You need to enter the material name into **CoREMOF's REFCODE** (e.g. JUKPAI, XEGKUR, PITPEP).
 
 ## Start!
 """

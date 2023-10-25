@@ -91,7 +91,6 @@ class Visualizer(Chain):
                 plot_atoms(atoms, ax)#, radii=0.3, rotation=('45x,45y,45z'))
                 plt.savefig(file, bbox_inches='tight')  # Save the figure
                 plt.close(fig)  # Close the figure window
-                #ase.visualize.view(atoms, viewer='matplotlib').save(file)
                 image = Image.open(file)
                 st.image(image, use_column_width=True,)
 
