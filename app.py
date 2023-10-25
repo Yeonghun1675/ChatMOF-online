@@ -12,7 +12,7 @@ ChatMOF.from_llm = from_llm_revised  # revise functions in ChatMOF
 
 verbose = True
 search_internet = False
-default_open_ai = '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'
+default_open_ai = None
 
 with st.sidebar:
     st.header('OpenAI ChatModel')
