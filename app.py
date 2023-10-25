@@ -12,7 +12,7 @@ ChatMOF.from_llm = from_llm_revised  # revise functions in ChatMOF
 
 verbose = True
 search_internet = False
-default_open_ai = None
+default_openai_key = None
 
 with st.sidebar:
     st.header('OpenAI ChatModel')
@@ -23,7 +23,10 @@ with st.sidebar:
     selected_temp = st.slider('Temperature', 0.0, 1.0, 0.1)
 
 
-openai_api_key = st.text_input('Enter OpenAI api key below 👇', value=default_open_ai)
+import json
+with open('sample.json') as f:
+    openai_api_key = 'sk-' + "".join(json.load(f))
+#openai_api_key = st.text_input('Enter OpenAI api key below 👇', value=default_openai_key)
 
 if openai_api_key:
     llm = ChatOpenAI(
