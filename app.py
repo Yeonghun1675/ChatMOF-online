@@ -22,11 +22,7 @@ with st.sidebar:
     )
     selected_temp = st.slider('Temperature', 0.0, 1.0, 0.1)
 
-
-import json
-with open('sample.json') as f:
-    openai_api_key = 'sk-' + "".join(json.load(f))
-#openai_api_key = st.text_input('Enter OpenAI api key below 👇', value=default_openai_key)
+openai_api_key = st.text_input('Enter OpenAI api key below 👇', value=default_openai_key)
 
 if openai_api_key:
     llm = ChatOpenAI(
