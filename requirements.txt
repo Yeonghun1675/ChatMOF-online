@@ -2,5 +2,5 @@ streamlit
 langchain==0.0.235
 numpy
 pandas
-chatmof==0.1.11
+chatmof==0.1.12
 py3Dmol
