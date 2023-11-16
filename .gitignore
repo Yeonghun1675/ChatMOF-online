@@ -21,3 +21,5 @@ _book
 __pycache__/
 
 *.ipynb
+
+secrets.toml
