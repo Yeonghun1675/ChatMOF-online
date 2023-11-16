@@ -125,7 +125,7 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # st.set_page_config(layout="wide")
-st.title('🚀 MOFTransformer models')
+st.title('🚀 MOFTransformer Models')
 st.subheader('Fine-tuned model')
 
 # Creating a session state to store the selected model
