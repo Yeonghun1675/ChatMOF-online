@@ -32,7 +32,7 @@ def run_demo():
             label="Choose your llm model",
             options=("gpt-4", "gpt-3.5-turbo", "gpt-3.5-turbo-16k")
         )
-        selected_temp = st.slider('Temperature', 0.0, 1.0, 0.1)
+        selected_temp = st.slider('Temperature', 0.0, 1.0, 0.0)
 
     openai_api_key = st.text_input(
         'Enter OpenAI api key below 👇', value=default_openai_key)
